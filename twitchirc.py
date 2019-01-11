@@ -41,7 +41,7 @@ class TwitchIRCReader:
             self.socket.send("PART #{}\r\n".format(self.channel).encode("utf8"))
         except:
             print("There was an error trying to leave {}'s channel.".format(self.channel))
-            return
+            sys.exit(0)
         self.channel = None    
 
     def JOIN(self):
